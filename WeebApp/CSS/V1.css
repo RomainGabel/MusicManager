@@ -28,3 +28,21 @@ height: 40px; /* longueur à spécifier */
 cursor: pointer;
 margin-left: 130px;
 }
+
+.BTINSCR {
+background:url(btnInscr1.png);
+border:none;
+width: 151px; /* largeur à spécifier */
+height: 40px; /* longueur à spécifier */
+cursor: pointer;
+margin-left: 130px;
+}
+
+.BTINSCR:hover {
+background:url(btnInscr2.png);
+border:none;
+width: 151px; /* largeur à spécifier */
+height: 40px; /* longueur à spécifier */
+cursor: pointer;
+margin-left: 130px;
+}
