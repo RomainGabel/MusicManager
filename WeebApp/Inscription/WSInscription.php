@@ -8,13 +8,15 @@
 	
 	<body>
 
+     
 		<img style="position:absolute; left: 0px; top:0px; width:100%;"
 		src="../CSS/LogoWall.png" alt=""/>
 		<div style="position:absolute; left:0px; top:0px; width:100%; height:100%;">
 
 
 		<section id="Container">
-			<h1>Page D'insciption</h1>
+			<a href="../"><img style="margin-left: 30px; left: 0px; top:0px; width:400px;"
+			src="../CSS/Logo.png" ></a>
 			
 			<?php
 

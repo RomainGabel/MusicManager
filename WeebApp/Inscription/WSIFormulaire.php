@@ -37,7 +37,7 @@
 
   <fieldset>
     <legend>Validation</legend>
-    <button type=button value=Valider onClick="if(verification())document.FormInscription.submit()"class="BTINSCR"></button>
+    <button type=button value=Valider onClick="if(verification())document.FormInscription.submit()"class="BTINSCR" style="margin-left: 140px;"></button>
   </fieldset>
 
 </form>  

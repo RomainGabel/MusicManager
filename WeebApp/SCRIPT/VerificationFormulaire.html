@@ -1,0 +1,38 @@
+<script type="text/javascript">
+
+	function verificationform1()
+	{
+		var myVar = document.forms["Connect"].elements["Pseudo"].value;		
+		if(myVar.length == 0){
+			surligne(document.forms["Connect"].elements["Pseudo"], true);
+			surligne(document.forms["Connect"].elements["Password"], true);
+			return false;
+		}
+				
+		else
+			return true;
+	}
+
+	function surligne(champ, erreur)
+	{
+		if(erreur)
+			champ.style.backgroundColor = "#fba";
+		else
+			champ.style.backgroundColor = "";
+	}
+
+	function verifLenght1(champ)
+	{
+		if(champ.value.length < 4 || champ.value.length > 10)
+		{
+			surligne(champ, true);
+			return false;
+		}
+		else
+		{
+			surligne(champ, false);
+			return true;
+		}
+	}
+
+	</script>

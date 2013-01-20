@@ -35,12 +35,12 @@ session_start();
 					?>
 					<form name="Connect" id="InscriptionUser" method="post" action="Connexion/WSConnexion.php">
 
-						<input style="left: 0px; top:0px; width:200px;" id="Pseudo" name="Pseudo" type="text" placeholder="Login"  autofocus onblur="verifPseudo(this)">
-						<input style="left: 0px; top:0px; width:200px;" id="Password" name="Password" type="Password" placeholder="Password" onblur="verifPseudo(this)">
+						<input style="left: 0px; top:0px; width:200px;" id="Pseudo" name="Pseudo" type="text" placeholder="Login"  autofocus onblur="verifLenght1(this)">
+						<input style="left: 0px; top:0px; width:200px;" id="Password" name="Password" type="Password" placeholder="Password" onblur="verifLenght1(this)">
 
 						<div class="DbBouton"> 
-							<button  type=button class="BTLOG" onClick="if(verification())document.Connect.submit()"> </button> 
-							<a href="../Inscription/WSInscription.php"><button  type=button class="BTINSCR"> </button></a>
+							<button  type=button class="BTLOG" onClick="if(verificationform1())document.Connect.submit()"> </button> 
+							<a href="../Inscription/WSInscription.php" ><button  type=button class="BTINSCR"> </button></a>
 						</div>
 
 					</form>
@@ -66,46 +66,12 @@ session_start();
 
 	</html>
 
-
-	<script type="text/javascript">
-
-	function verification()
-	{
-		var myVar = document.forms["Connect"].elements["Pseudo"].value;		
-		if(myVar.length == 0){
-			surligne(document.forms["Connect"].elements["Pseudo"], true);
-			surligne(document.forms["Connect"].elements["Password"], true);
-			return false;
+		<?php
+		if(!@include_once ('SCRIPT/VerificationFormulaire.html')){
+			echo "Erreur d'inclusion de fond d'écran";
 		}
-				
-		else
-			return true;
-	}
-
-	function surligne(champ, erreur)
-	{
-		if(erreur)
-			champ.style.backgroundColor = "#fba";
-		else
-			champ.style.backgroundColor = "";
-	}
-
-	function verifPseudo(champ)
-	{
-		if(champ.value.length < 4 || champ.value.length > 10)
-		{
-			surligne(champ, true);
-			return false;
-		}
-		else
-		{
-			surligne(champ, false);
-			return true;
-		}
-	}
-
-	</script>
-
+		?>
+	
 
 
 
