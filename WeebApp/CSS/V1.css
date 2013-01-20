@@ -1,15 +1,26 @@
 Body {
 
 	min-height: 600px;
-
+	background-color: black;
 	min-width: 600px;
 
 }
+
+p, legend, li{
+	color: white;
+}
+
 
 #Container {
 	margin-left: auto;
 	margin-right: auto;
 	width: 450px;
+}
+.DbBouton{
+	display: inline-block ;
+	width: 320px; /* largeur à spécifier */
+	height: 40px; 
+	margin-left: 55px;
 }
 .BTLOG {
 background:url(BTLog1.png);
@@ -17,7 +28,7 @@ border:none;
 width: 151px; /* largeur à spécifier */
 height: 40px; /* longueur à spécifier */
 cursor: pointer;
-margin-left: 130px;
+margin-left: 0px;
 }
 
 .BTLOG:hover {
@@ -26,16 +37,17 @@ border:none;
 width: 151px; /* largeur à spécifier */
 height: 40px; /* longueur à spécifier */
 cursor: pointer;
-margin-left: 130px;
+margin-left: 0px;
 }
 
 .BTINSCR {
 background:url(btnInscr1.png);
+background-repeat: no-repeat;
 border:none;
 width: 151px; /* largeur à spécifier */
 height: 40px; /* longueur à spécifier */
 cursor: pointer;
-margin-left: 130px;
+padding-top: 0px;
 }
 
 .BTINSCR:hover {
@@ -44,5 +56,5 @@ border:none;
 width: 151px; /* largeur à spécifier */
 height: 40px; /* longueur à spécifier */
 cursor: pointer;
-margin-left: 130px;
+margin-left: 0px;
 }

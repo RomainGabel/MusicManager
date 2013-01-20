@@ -10,7 +10,7 @@ $Email= $_POST['Email'];
 try
 {
 	// On se connecte à MySQL
-	$bdd = new PDO('mysql:host=localhost; dbname=musicmanagerv1', 'root', '');
+	$bdd = new PDO('mysql:host=localhost; dbname=musicmanager', 'root', 'root');
 }
 catch(Exception $e)
 {

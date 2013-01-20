@@ -3,12 +3,12 @@
     <legend>Identifiant</legend>
     <ol>
       <li>
-        <label for="Pseudo">Pseudo</label>
-        <input id="Pseudo" name="Pseudo" type="text" placeholder="Webbdoger" required autofocus>
+        <label for="Pseudo">Login</label>
+        <input id="Pseudo" name="Pseudo" type="text" placeholder="Login" required autofocus>
       </li>
       <li>
         <label for="Password">Mots de passe</label>
-        <input id="Password" name="Password" type="Password" placeholder="mdp" required>
+        <input id="Password" name="Password" type="Password" placeholder="Password" required>
       </li>
        <li>
         <label for="email">Email</label>
@@ -37,7 +37,7 @@
 
   <fieldset>
     <legend>Validation</legend>
-    <button type=button value=Valider onClick="if(verification())document.FormInscription.submit()"class="BTLOG"></button>
+    <button type=button value=Valider onClick="if(verification())document.FormInscription.submit()"class="BTINSCR"></button>
   </fieldset>
 
 </form>  

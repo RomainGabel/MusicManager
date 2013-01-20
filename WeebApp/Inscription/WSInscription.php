@@ -9,7 +9,7 @@
 	<body>
 
 		<img style="position:absolute; left: 0px; top:0px; width:100%;"
-		src="../CSS/LogWall.png" alt=""/>
+		src="../CSS/LogoWall.png" alt=""/>
 		<div style="position:absolute; left:0px; top:0px; width:100%; height:100%;">
 
 
