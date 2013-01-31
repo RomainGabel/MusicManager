@@ -35,11 +35,11 @@ session_start();
 					?>
 					<form name="Connect" id="InscriptionUser" method="post" action="Connexion/WSConnexion.php">
 
-						<input style="left: 0px; top:0px; width:200px;" id="Pseudo" name="Pseudo" type="text" placeholder="Login"  autofocus onblur="verifLenght1(this)">
-						<input style="left: 0px; top:0px; width:200px;" id="Password" name="Password" type="Password" placeholder="Password" onblur="verifLenght1(this)">
+						<input style="left: 0px; top:0px; width:200px;" id="Pseudo" name="Pseudo" type="text" placeholder="Login"  autofocus onblur="verifLenght1(this)" required>
+						<input style="left: 0px; top:0px; width:200px;" id="Password" name="Password" type="Password" placeholder="Password" onblur="verifLenght1(this)" required>
 
 						<div class="DbBouton"> 
-							<button  type=button class="BTLOG" onClick="if(verificationform1())document.Connect.submit()"> </button> 
+							<button  type=submit class="BTLOG"> </button> 
 							<a href="../Inscription/WSInscription.php" ><button  type=button class="BTINSCR"> </button></a>
 						</div>
 

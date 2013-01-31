@@ -18,13 +18,20 @@ catch(Exception $e)
 	die('Erreur : '. $e->getMessage());
 
 }
+ 
+if ( 0/*$bdd->query("SELECT COUNT(`IDUser`) FROM `user` WHERE Mail = `$Email` Or `Nom`= `$Nom`")->fetch()*/ == 0 ) {
 
-$requete = $bdd->query("INSERT INTO `musicmanagerv1`.`user` (`IDUser`, `Nom`, `Prenom`, `Login`, `Pswd`, `Mail`) VALUES (NULL, '$Nom', '$Prenom', '$Login', '$Password', '$Email')");
-$requete->closeCursor();  
+	$requete = $bdd->query("INSERT INTO `musicmanager`.`user` (`IDUser`, `Nom`, `Prenom`, `Login`, `Pswd`, `Mail`) VALUES (NULL, '$Nom', '$Prenom', '$Login', '$Password', '$Email')");
+	$requete->closeCursor();  
+	
+	echo "OK";
+
+} else {
+	echo "Fail";
+}
 
 
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -42,7 +49,7 @@ $requete->closeCursor();
 
 
 		<section id="Container">
-			<h1> Envoie du formulaire </h1>
+			<h1> Envoi du formulaire </h1>
 		</section>
 
 	</body>

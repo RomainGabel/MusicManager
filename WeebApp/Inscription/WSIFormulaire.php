@@ -14,7 +14,6 @@
         <label for="email">Email</label>
         <input id="email" name="Email" type="email" placeholder="exemple@domaine.com" required>
       </li>
-        <input id="Autorisation" name="Autorisation" type="hidden" value="2" required>
     </ol>
   </fieldset>
 
@@ -23,7 +22,7 @@
     <ol>
       <li>
         <label for="nom">Nom</label>
-        <input id="nom" name="Nom" type="text" placeholder="Gabel" required autofocus>
+        <input id="nom" name="Nom" type="text" placeholder="Gabel" required >
       </li>
       <li>
         <label for="Prenom">Prenom</label>
@@ -37,7 +36,7 @@
 
   <fieldset>
     <legend>Validation</legend>
-    <button type=button value=Valider onClick="if(verification())document.FormInscription.submit()"class="BTINSCR" style="margin-left: 140px;"></button>
+    <button type=submit value=Valider class="BTINSCR" style="margin-left: 140px;"></button>
   </fieldset>
 
 </form>  

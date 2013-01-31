@@ -1,0 +1,117 @@
+body{
+
+	background-color: black;
+	background-image: url(../CSS/LogoWall.png);
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+
+#Menu
+{
+	
+	width: 180px;
+	height: 100%;
+	background-color: black;
+	border-right: solid;
+	border-color: gray;
+	border-width:2px;
+	position: absolute;
+	top: 0em;
+	left: -11em;
+	overflow : hidden;
+	padding-left: 20px;
+	position: fixed;
+	-webkit-transition-property: background-color, margin-left ; 
+	-webkit-transition-duration: 1s;
+
+	-moz-transition-property: background-color, margin-top ;
+	-moz-transition-duration: 1s;
+
+
+
+}
+#Menu:hover
+{
+	
+	background-color: #333;
+	margin-left: 160px;
+
+}
+
+#ListMenu>li{
+	color: #fff;
+	font-size: 2em;
+	-webkit-transition-property: background-color, margin-left ; 
+	-webkit-transition-duration: 1s;
+}
+
+#ListMenu>li:hover{
+	margin-left: 30px;
+	background-color: red;
+
+}
+
+
+p{
+	color: red;
+}
+
+#Content{
+	
+	margin-left: 200px;
+	margin-top: 0px;
+}
+img #Content{
+	display: inline-block;
+	margin: auto;
+}
+
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+#ListAlbum>li {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	background:#333;
+	color: #fff;
+	height: 200px;
+	width: 200px;
+	margin: 0;
+
+	padding: 0;
+	overflow: hidden;
+}	
+li ul {
+	font-size: 0.85em;
+	margin: 8px;
+	line-height: 1.4;
+
+}
+
+img[alt] {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: none;
+	height: 200px;
+	width: 200px;
+
+	-webkit-transition-property: padding-left;
+	-webkit-transition-duration: .5s;
+	-webkit-transition-timing-function: ease-out;
+
+
+}
+img[alt]:hover, img[alt]:focus {
+	padding-left:140px;
+}
+
+a {
+	color:#fff;
+	text-decoration:none;	
+}

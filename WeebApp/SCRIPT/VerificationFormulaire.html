@@ -1,11 +1,26 @@
-<script type="text/javascript">
 
+
+
+
+<script type="text/javascript">
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - SCRIPT VERIFCONNEXION
 	function verificationform1()
 	{
 		var myVar = document.forms["Connect"].elements["Pseudo"].value;		
-		if(myVar.length == 0){
-			surligne(document.forms["Connect"].elements["Pseudo"], true);
-			surligne(document.forms["Connect"].elements["Password"], true);
+		var myVar2 = document.forms["Connect"].elements["Password"].value;		
+		if(myVar.length == 0 || myVar2.length==0){
+
+			if (myVar.length == 0 )
+				surligne(document.forms["Connect"].elements["Pseudo"], true);
+			else
+				surligne(document.forms["Connect"].elements["Pseudo"], false);
+			
+			if (myVar2.length==0)
+				surligne(document.forms["Connect"].elements["Password"], true);
+			else
+				surligne(document.forms["Connect"].elements["Password"], false);
+
+
 			return false;
 		}
 				
@@ -34,5 +49,12 @@
 			return true;
 		}
 	}
+
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - SCRIPT VERIFINSCRIPTION
+
+
+
+
+
 
 	</script>
