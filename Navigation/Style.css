@@ -73,6 +73,21 @@ ul {
 	padding: 0;
 	list-style:none;
 }
+
+
+li ul {
+	font-size: 0.85em;
+	margin: 8px;
+	line-height: 1.4;
+
+}
+
+a {
+	color:#fff;
+	text-decoration:none;	
+}
+
+/*ListAlbum*/
 #ListAlbum>li {
 	position: relative;
 	display: inline-block;
@@ -86,12 +101,7 @@ ul {
 	padding: 0;
 	overflow: hidden;
 }	
-li ul {
-	font-size: 0.85em;
-	margin: 8px;
-	line-height: 1.4;
 
-}
 
 img[alt] {
 	position: absolute;
@@ -111,7 +121,54 @@ img[alt]:hover, img[alt]:focus {
 	padding-left:140px;
 }
 
-a {
-	color:#fff;
-	text-decoration:none;	
+/*Album view*/
+
+.AlbumView {
+
 }
+
+#AlbumView>li {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	background:#333;
+	color: #fff;
+	height: 404px;
+	width: 404px;
+	margin-left: Auto;
+	margin-right: Auto;
+	margin-bottom: 3px;
+
+	padding: 0;
+	overflow: hidden;
+}	
+
+#AlbumView img[alt] {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: none;
+	height: 400px;
+	width: 400px; 
+	padding-left: 300px;
+
+	-webkit-transition-property: padding-left;
+	-webkit-transition-duration: .5s;
+	-webkit-transition-timing-function: ease-out;
+
+
+}
+#AlbumView img[alt]:hover, #AlbumView img[alt]:focus {
+	padding-left:00px;
+}
+
+
+
+
+
+
+
+
+
+
+

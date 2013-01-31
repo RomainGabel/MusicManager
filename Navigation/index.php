@@ -2,10 +2,13 @@
 session_start();
 
 
+$Pseudo = $_SESSION['Pseudo'];
+
 try
 {
 	// On se connecte à MySQL
-	$bdd = new PDO('mysql:host=localhost; dbname=musicmanager', 'root', 'root');
+	$bdd = new PDO('mysql:host=localhost; dbname=musicmanagerv1', 'root', '');
+	//$bdd = new PDO('mysql:host=localhost; dbname=musicmanager', 'root', 'root');
 }
 catch(Exception $e)
 {
@@ -14,7 +17,24 @@ catch(Exception $e)
 
 }
 
-$requete = $bdd->query("SELECT Titre, Auteur FROM Album  ");
+$requete = $bdd->query("SELECT A.Nom , D.Titre
+							FROM Album D, interchansonchanteur I
+								INNER JOIN Chanteur A ON I.IdChanteur = A.IdChanteur
+							        INNER JOIN Chanson C ON I.IdChanson = C.IdChanson
+								WHERE (C.Titre, D.Titre)  in (
+									SELECT C.Titre, A.Titre
+									FROM  Chanson C
+										INNER JOIN Album A  ON C.IdAlbum = A.IdAlbum
+										WHERE A.Titre IN (	
+							                        	SELECT A.Titre
+											FROM User U2, Chanson C2
+												INNER JOIN Album A ON C2.IdAlbum = A.IdAlbum
+												WHERE (U2.Login, C2.Titre) IN (
+								                        		SELECT U.Login, C.Titre
+													FROM inter_user_chanson I
+														INNER JOIN User U ON I.IdUser = U.IdUser
+														INNER JOIN Chanson C ON I.IdChanson = C.IdChanson
+															WHERE U.Login =  '$Pseudo' ) GROUP BY A.Titre)) GROUP BY D.Titre");
 
 ?>
 <!DOCTYPE html>
@@ -41,11 +61,11 @@ $requete = $bdd->query("SELECT Titre, Auteur FROM Album  ");
 				?>
 			<li id="item">
 				<ul>
-					<li><?php echo $donnees['Auteur']; ?></li>
+					<li><?php echo $donnees['Nom']; ?></li>
 					<li><?php echo $donnees['Titre']; ?></li>
 					
 				</ul>
-				<a href="#"><img alt="Album1" src="5.jpg" /></a>
+				<a href="AlbumView.php?Album=<?$donnees['Titre']?>"><img alt="Album1" src="5.jpg" /></a>
 			</li>
 				<?php
 			}
@@ -57,7 +77,7 @@ $requete = $bdd->query("SELECT Titre, Auteur FROM Album  ");
 					<li>Chanteur</li>
 					<li>Année</li>
 				</ul>
-				<a href="#"><img alt="Album1" src="1.jpg" /></a>
+				<a href="AlbumView.php?Album=Parachutes"><img alt="Album1" src="1.jpg" /></a>
 			</li>
 			<li id="item">
 				<ul>
@@ -81,13 +101,6 @@ $requete = $bdd->query("SELECT Titre, Auteur FROM Album  ");
 						<li>Année</li>
 					</ul>
 					<a href="#"><img alt="Album1" src="4.jpg" /></a></li>
-					<li id="item">
-						<ul>
-							<li>Album</li>
-							<li>Chanteur</li>
-							<li>Année</li>
-						</ul>
-						<a href="#"><img alt="Album1" src="5.jpg" /></a></li>
 						<li id="item">
 							<ul>
 								<li>Album</li>
@@ -108,7 +121,7 @@ $requete = $bdd->query("SELECT Titre, Auteur FROM Album  ");
 
 					</ul>
 					<div id="Menu">
-						<h1 style="color: red">MENU</h1>
+						<h1 style="color: red"><?php echo $Pseudo ?></h1>
 
 						<ul id="ListMenu">
 							<li><img src="CPBT.png" style="width:0.6em;position:relative; left: 0px; bottom:0px;"> Compte</li>
