@@ -25,6 +25,7 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `user`
 --
+DROP TABLE IF EXISTS 'user';
 
 CREATE TABLE IF NOT EXISTS `user` (
   `IDUser` tinyint(10) unsigned NOT NULL AUTO_INCREMENT,
