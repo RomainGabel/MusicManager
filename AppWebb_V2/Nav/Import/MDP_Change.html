@@ -1,0 +1,47 @@
+<?php
+if (isset($_POST['OldPSWD']) AND isset($_POST['Password']) AND isset($_POST['NWPSD']) )
+{
+    
+    
+    		if(!@include_once ('../../Connect/WSConnectBDD.html')){}				
+			
+			$requete = $bdd->query("select Pswd 
+										FROM user
+        									where login='$Pseudo'");
+			$donnees = $requete->fetch();
+			$requete->closeCursor(); 
+
+
+			$MdpIsRenew  = "";
+
+			if ($donnees['Pswd'] == $_POST['OldPSWD']) {
+
+				$OldPassFalse  = ""; //Ancien MDP non valide
+
+				if ($_POST['Password'] == $_POST['NWPSD']) {
+					$NewPWD = $_POST['NWPSD'];
+					$MdpDiff  = "";
+				$requete = $bdd->query("UPDATE user
+											SET Pswd = '$NewPWD'
+												WHERE login='$Pseudo'");
+					$MdpIsRenew  = "style= \"background-color: #B0CC99;\"";
+
+				$requete->closeCursor(); 
+				}
+				else{
+					$MdpDiff  = "style= \"background-color: #FFB6B8;\""; //Mdp différent 
+					}
+			}
+			elseif (condition) {
+				$OldPassFalse  = "style= \"background-color: #FFB6B8;\""; //Ancien MDP non valide
+			}
+ 
+}
+else{
+			$MdpIsRenew  = "";
+			$MdpDiff  = "";
+			$OldPassFalse  = "";
+}
+
+
+?>

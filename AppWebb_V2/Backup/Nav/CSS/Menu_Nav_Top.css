@@ -1,0 +1,163 @@
+body{
+	margin: 0px;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.Menu_Nav_Top, .Menu_nav_top_1, .Menu_nav_top_2, .Menu_nav_top_3 {
+
+
+}
+.Menu_Nav_Top p{
+
+	margin: 0px;
+	margin-left: 8px;
+	margin-top: 2px;
+	color: white;
+	
+}
+
+.Menu_Nav_top{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 85px;
+	background-color: blue;
+
+}
+.Menu_nav_top_1{
+	display: inline-block;
+	position: absolute;
+	top: 0px;
+	left:-80%;
+	width: 100%;
+	height: 65px;
+	background-color: #999087;
+	z-index: 100;
+
+		-webkit-transition-property: left ; 
+		-webkit-transition-duration: 1s;
+		-moz-transition-property: left ; 
+		-moz-transition-duration: 1s;
+		-o-transition-property: left ; 
+		-o-transition-duration: 1s;
+		transition-property: left ; 
+		transition-duration: 1s;
+}
+
+.Menu_nav_top_1:hover{
+	left: 0%;
+}
+
+.P_Info{
+	position: absolute;
+	right: 0;
+	width: 20%;
+	height: 65px;
+	border-left: 1px solid black;
+}
+
+.Statistique{
+	position: absolute;
+	left: 0;
+	width: 80%;
+}
+
+.Menu_nav_top_1 p{
+	margin-top: 12px; 
+}
+.Menu_nav_top_2{
+	position: absolute;
+	top: 0px;
+	right:0px;
+	display: inline-block;
+	width: 80%;
+	height: 65px;
+	/*background-color: black;*/
+	/*border-bottom: 1px solid black;*/
+	box-shadow: 0px 8px 12px #A2B5BF;
+	color: black;
+	z-index: 50;
+}
+.Menu_nav_top_3{
+	display: inline-block;
+	position: relative;
+	top:0px;
+	left: 0%;
+	width: 50%;
+	height: 30px;
+	background-color: #B9121B;
+	/*border-bottom: 1px solid black;
+	border-right: 1px solid black;*/
+	box-shadow: 0px 8px 12px #A2B5BF;
+	z-index: 150;
+	float: left;
+
+
+
+}
+.Menu_nav_top_3:hover{
+	
+}
+
+.Menu_nav_top_3_bis{
+	width: 200%;
+	height: 30px;
+	display: inline-block;
+	position: relative;
+	top:65px;
+	left: -80%;	
+	-webkit-transition-property: left ; 
+	-webkit-transition-duration: 1s;
+	-moz-transition-property: left ; 
+	-moz-transition-duration: 1s;
+	-o-transition-property: left ; 
+	-o-transition-duration: 1s;
+	transition-property: left ; 
+	transition-duration: 1s;
+
+}
+.Menu_nav_top_3_bis:hover{
+	left: 0%
+}
+
+
+.Menu_nav_top_3 p {
+
+	text-align: center;
+	font-family: 'Skranji', cursive;
+	font-size: 14px;
+	color: white;
+
+}
+.Menu_nav_top_3 a {
+
+	text-align: center;
+	font-family: 'Skranji', cursive;
+	font-size: 14px;
+	color: white;
+	TEXT-DECORATION: none;
+
+}
+
+.Menu_Button{
+	position: absolute;
+	right: 0;
+	width: 20%;
+	height: 30px;
+	border-left: 1px solid black;
+}
+.Menu_Button p{
+	font-size: 17px;
+}
+
+.Menu{
+	position: absolute;
+	left: 5%;
+	width: 80%;
+}
+
+.Tabulation{
+	margin-left: 40px;
+}

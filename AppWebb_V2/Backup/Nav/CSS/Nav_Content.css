@@ -1,0 +1,97 @@
+.Content{
+	display: inline-block;
+	position: absolute;
+	top: 140px;
+	left: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	/*border: 1px solid black;*/
+}
+.Content h1{
+
+	font-family: 'Skranji', cursive;
+	font-size: 30px;
+	margin-left: 7%;
+	color: #B9121B;
+}
+
+
+ ul {
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+
+
+.Content li ul {
+	font-size: 0.85em;
+	margin: 0px;
+	line-height: 1.4;
+
+}
+
+
+.Content a {
+	color:#fff;
+	text-decoration:none;	
+}
+
+/*ListAlbum*/
+#ListAlbum{
+	padding-left: 5%;
+
+}
+#ListAlbum>li {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	background:#999087;
+	color: #fff;
+	width: 200px;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	padding-top: 10px; 
+	text-decoration: none;
+	font-size: 13px;
+	margin-bottom: 3px;
+}	
+.itemAlbum ul, .itemAlbum li{
+		margin-left: 5px;
+}
+
+#ListAlbum img[alt] {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: none;
+	height: 100%;
+	width: 100%;
+
+	-webkit-transition-property: padding-left;
+	-webkit-transition-duration: .5s;
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-property: padding-left;
+	-moz-transition-duration: .5s;
+	-moz-transition-timing-function: ease-out;
+	-o-transition-property: padding-left;
+	-o-transition-duration: .5s;
+	-o-transition-timing-function: ease-out;
+	transition-property: padding-left;
+	transition-duration: .5s;
+	transition-timing-function: ease-out;
+
+
+
+}
+#ListAlbum img[alt]:hover, #ListAlbum img[alt]:focus {
+	padding-left:140px;
+}
+
+ul ul, ol ul {
+	list-style-type: none;
+	padding-left: 7px;
+	width: 150px;
+}

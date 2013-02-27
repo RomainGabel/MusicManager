@@ -1,0 +1,59 @@
+
+
+
+#AlbumView>li {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	background:#333;
+	color: #fff;
+	height: 404px;
+	width: 404px;
+	margin-left: Auto;
+	margin-right: Auto;
+	margin-bottom: 3px;
+
+	padding: 0;
+	overflow: hidden;
+}	
+
+#AlbumView img[alt] {
+	position: absolute;
+	left: 300px;
+	top: 0;
+	border: none;
+	height: 404px;
+	width: 404px; 
+	padding-left: 00px;
+
+	-webkit-transition-property: margin-left;
+	-webkit-transition-duration: .5s;
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-property: margin-left;
+	-moz-transition-duration: .5s;
+	-moz-transition-timing-function: ease-out;
+	-o-transition-property: margin-left;
+	-o-transition-duration: .5s;
+	-o-transition-timing-function: ease-out;
+	transition-property: margin-left;
+	transition-duration: .5s;
+	transition-timing-function: ease-out;
+
+
+}
+#AlbumView img[alt]:hover, #AlbumView img[alt]:focus {
+	margin-left: -300px;
+}
+.AlbumView {
+	position: relative;
+	left: 5%;
+}
+.itemAlbumView{
+	display: inline-block;
+	position: absolute;
+	left: 40%;
+}
+
+
+
+
