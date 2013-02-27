@@ -1,4 +1,4 @@
-<<?php
+<?php
 session_start();
 
 $Album = $_GET['Album'];
@@ -7,9 +7,9 @@ $Pseudo = $_SESSION['Pseudo'];
 
 try
 {
-	// On se connecte à MySQL
-	$bdd = new PDO('mysql:host=localhost; dbname=musicmanagerv1', 'root', '');
-	//$bdd = new PDO('mysql:host=localhost; dbname=musicmanager', 'root', 'root');
+	//On se connecte à MySQL
+	//$bdd = new PDO('mysql:host=localhost; dbname=musicmanagerv1', 'root', '');
+	$bdd = new PDO('mysql:host=localhost; dbname=musicmanager', 'root', 'root');
 }
 catch(Exception $e)
 {
@@ -18,9 +18,13 @@ catch(Exception $e)
 
 }
 
-$requete = $bdd->query("");
+$requete = $bdd->query("SELECT C.Titre 
+							FROM chanson C
+			        			INNER JOIN album A ON C.IdAlbum = A.IdAlbum
+					               	WHERE A.Titre = '$Album'");
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,22 +34,23 @@ $requete = $bdd->query("");
 </head>
 
 <body>
-
-
-
-
 	<div id="Content">
-		
-	
-
 			<ul id="AlbumView">
 				<li id="item">
 					<ul >
-						<li style="	font-size: 2em;"><?php echo $Album; ?></li>
-						<li>1. Titre 1</li>
-						<li>2. Titre 2</li>
+						<li style="	font-size: 3em;"><?php echo $Album; ?></li>
+						<?php 
+							$i = 1 ;
+							while (	$donnees = $requete->fetch()) {
+								?>
+									<li style="	font-size: 1.3em;"><?echo $i.'. '.$donnees['Titre'] ;?></li>
+								<?php
+								$i +=1;
+							}
+
+						?>
 					</ul>
-					<a href="#"><img alt="Album1" src="1.jpg" /></a>
+					<img alt="Album1" src="1.jpg" />
 				</li>
 			</ul>
 

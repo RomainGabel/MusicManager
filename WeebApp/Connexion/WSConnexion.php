@@ -12,8 +12,8 @@ $Password= $_POST['Password'];
 try
 {
 	// On se connecte à MySQL
-	$bdd = new PDO('mysql:host=localhost; dbname=musicmanagerv1', 'root', '');
-	//$bdd = new PDO('mysql:host=localhost; dbname=musicmanager', 'root', 'root');
+	//$bdd = new PDO('mysql:host=localhost; dbname=musicmanagerv1', 'root', '');
+	$bdd = new PDO('mysql:host=localhost; dbname=musicmanager', 'root', 'root');
 }
 catch(Exception $e)
 {
@@ -44,7 +44,7 @@ if ( $test['Login'] == '') {
 <head>
 	<title>Welcome to jobManager !</title>
 	<LINK rel="stylesheet" type="text/css" href="../CSS/V1.css">
-		<meta http-equiv="refresh" content="5; URL=../Navigation/index.php">
+		<meta http-equiv="refresh" content="5; URL=../Navigation/MusiqueView.php">
 	</head>
 	<body>
 

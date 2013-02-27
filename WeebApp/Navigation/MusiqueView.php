@@ -1,4 +1,4 @@
-<<?php
+<?php
 session_start();
 
 
@@ -7,8 +7,8 @@ $Pseudo = $_SESSION['Pseudo'];
 try
 {
 	// On se connecte à MySQL
-	$bdd = new PDO('mysql:host=localhost; dbname=musicmanagerv1', 'root', '');
-	//$bdd = new PDO('mysql:host=localhost; dbname=musicmanager', 'root', 'root');
+	//$bdd = new PDO('mysql:host=localhost; dbname=musicmanagerv1', 'root', '');
+	$bdd = new PDO('mysql:host=localhost; dbname=musicmanager', 'root', 'root');
 }
 catch(Exception $e)
 {
@@ -18,23 +18,24 @@ catch(Exception $e)
 }
 
 $requete = $bdd->query("SELECT A.Nom , D.Titre
-							FROM Album D, interchansonchanteur I
-								INNER JOIN Chanteur A ON I.IdChanteur = A.IdChanteur
-							        INNER JOIN Chanson C ON I.IdChanson = C.IdChanson
+							FROM album D, interchansonchanteur I
+								INNER JOIN chanteur A ON I.IdChanteur = A.IdChanteur
+							        INNER JOIN chanson C ON I.IdChanson = C.IdChanson
 								WHERE (C.Titre, D.Titre)  in (
 									SELECT C.Titre, A.Titre
-									FROM  Chanson C
-										INNER JOIN Album A  ON C.IdAlbum = A.IdAlbum
+									FROM  chanson C
+										INNER JOIN album A  ON C.IdAlbum = A.IdAlbum
 										WHERE A.Titre IN (	
 							                        	SELECT A.Titre
-											FROM User U2, Chanson C2
-												INNER JOIN Album A ON C2.IdAlbum = A.IdAlbum
+											FROM user U2, chanson C2
+												INNER JOIN album A ON C2.IdAlbum = A.IdAlbum
 												WHERE (U2.Login, C2.Titre) IN (
 								                        		SELECT U.Login, C.Titre
 													FROM inter_user_chanson I
-														INNER JOIN User U ON I.IdUser = U.IdUser
-														INNER JOIN Chanson C ON I.IdChanson = C.IdChanson
-															WHERE U.Login =  '$Pseudo' ) GROUP BY A.Titre)) GROUP BY D.Titre");
+														INNER JOIN user U ON I.IdUser = U.IdUser
+														INNER JOIN chanson C ON I.IdChanson = C.IdChanson
+															WHERE U.Login =  '$Pseudo' ) GROUP BY A.Titre)) GROUP BY D.Titre 
+																Order by D.Titre DESC");
 
 ?>
 <!DOCTYPE html>
@@ -46,10 +47,6 @@ $requete = $bdd->query("SELECT A.Nom , D.Titre
 </head>
 
 <body>
-
-
-
-
 	<div id="Content">
 		<img style="width:300px;"
 		src="../CSS/Logo.png">
@@ -59,13 +56,13 @@ $requete = $bdd->query("SELECT A.Nom , D.Titre
 			while ($donnees = $requete->fetch())
 			{
 				?>
-			<li id="item">
-				<ul>
+			<li >
+				<ul id="itemAlbum">
 					<li><?php echo $donnees['Nom']; ?></li>
 					<li><?php echo $donnees['Titre']; ?></li>
 					
 				</ul>
-				<a href="AlbumView.php?Album=<?$donnees['Titre']?>"><img alt="Album1" src="5.jpg" /></a>
+				<?php echo "<a href='AlbumView.php?Album=".$donnees['Titre']."'>"?> <img alt="Album1" src="5.jpg" /></a>
 			</li>
 				<?php
 			}
